@@ -1,0 +1,43 @@
+﻿@using RunRadar.Data.Enum
+@using RunRadar.ViewModels
+@model IEnumerable<Club>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    bool isAuthenticated = User.Identity?.IsAuthenticated == true;
+}
+
+<div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            @foreach(var item in Model)
+            {
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="@item.Image" alt="Card image cap">
+                    <div class="card-body">
+                      <p class="card-text">@item.Title</p>
+                      <p class="card-text">@item.Description</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <a asp-controller="Club" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-outline-success">View</a>
+                          @if (isAuthenticated && User.IsInRole("admin"))
+                            {
+                                <a asp-controller="Club" asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-outline-secondary">Edit</a>
+                                <a asp-controller="Club" asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-outline-danger">Delete</a>
+                            }
+                        </div>
+                        <small class="text-muted">@item.ClubCategory</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+            }
+        </div>
+    </div>
+</div>

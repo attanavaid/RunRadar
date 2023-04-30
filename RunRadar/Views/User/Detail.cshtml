@@ -1,0 +1,727 @@
+﻿@using RunRadar.ViewModels
+@model UserDetailViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="main-container">
+    <nav aria-label="breadcrumb" role="navigation" class="bg-info text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">Runners</a>
+                        </li>
+
+                        <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                    </ol>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </nav>
+    <section class="bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="media">
+                        <img alt="Image" src="@Model.ProfileImageUrl" class="mr-md-5 avatar avatar-xlg">
+                        <div class="media-body">
+                            <div class="mb-3">
+                                <h1 class="h2 mb-2">@Model.UserName</h1>
+                                <span class="text-muted"><i class="icon-location"></i>@Model.Location</span>
+                            </div>
+                            <p class="text-muted">Pace: @Model.Pace</p>
+                            <p class="text-muted">Mileage: @Model.Mileage</p>
+                            <p>
+                                Welcome to my profile! I run all around the world trying to go full pro. In my spare time, I love experimenting with new running shoes, recommend me some!
+                            </p>
+                            <div>
+                                <button class="btn btn-outline-info" data-toggle="button"><i class="icon-add-user"></i> Follow</button>
+                                <button class="btn btn-outline-info">
+                                    <i class="icon-mail"></i>
+                                </button>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-outline-info dropdown-toggle dropdown-toggle-no-arrow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon-dots-three-horizontal"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);">
+                                        <a class="dropdown-item" href="#">Add to group</a>
+                                        <a class="dropdown-item" href="#">Share Profile</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Block</a>
+                                        <a class="dropdown-item" href="#">Report</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end of col-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <!--end of section-->
+    <section class="flush-with-above space-0">
+        <div class="bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="races-tab" data-toggle="tab" href="#races" role="tab" aria-controls="races" aria-selected="true">Races</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="groups-tab" data-toggle="tab" href="#clubs" role="tab" aria-controls="clubs" aria-selected="false">Clubs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="followers-tab" data-toggle="tab" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Followers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end of col-->
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </div>
+    </section>
+    <section class="flush-with-above">
+        <div class="tab-content">
+            <div class="tab-pane fade active show" id="races" role="tabpanel" aria-labelledby="races-tab">
+                <div class="container">
+                    <ul class="row feature-list feature-list-sm">
+
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <div class="card">
+                                <a href="#">
+                                    <img class="card-img-top" src="/img/photo-road.jpg" alt="Card image cap">
+                                </a>
+                                <div class="card-body">
+                                    <a href="#">
+                                        <h4 class="card-title">Race 01</h4>
+                                        <p class="card-text text-body">The first race!</p>
+                                    </a>
+                                </div>
+                                <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                                    <div class="text-small">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="icon-heart mr-1"></i> 373</li>
+                                            <li class="list-inline-item"><i class="icon-message mr-1"></i> 62</li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropup">
+                                        <button class="btn btn-sm btn-outline-info dropdown-toggle dropdown-toggle-no-arrow" type="button" id="BenchButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon-dots-three-horizontal"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="BenchButton">
+                                            <a class="dropdown-item" href="#">Save</a>
+                                            <a class="dropdown-item" href="#">Share</a>
+                                            <a class="dropdown-item" href="#">Comment</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Report</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--end of col-->
+
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <div class="card">
+                                <a href="#">
+                                    <img class="card-img-top" src="/img/photo-beach.jpg" alt="Card image cap">
+                                </a>
+                                <div class="card-body">
+                                    <a href="#">
+                                        <h4 class="card-title">Race 02</h4>
+                                        <p class="card-text text-body">The second race!</p>
+                                    </a>
+                                </div>
+                                <div class="card-footer card-footer-borderless d-flex justify-content-between">
+                                    <div class="text-small">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="icon-heart mr-1"></i> 84</li>
+                                            <li class="list-inline-item"><i class="icon-message mr-1"></i> 21</li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropup">
+                                        <button class="btn btn-sm btn-outline-info dropdown-toggle dropdown-toggle-no-arrow" type="button" id="KinButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="icon-dots-three-horizontal"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="KinButton">
+                                            <a class="dropdown-item" href="#">Save</a>
+                                            <a class="dropdown-item" href="#">Share</a>
+                                            <a class="dropdown-item" href="#">Comment</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Report</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--end of col-->
+
+                    </ul>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </div>
+
+            <div class="tab-pane fade" id="clubs" role="tabpanel" aria-labelledby="groups-tab">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 col-md-6 col-lg-4 d-flex">
+                            <div class="card">
+                                <a href="#">
+                                    <img class="card-img-top" src="/img/graphic-group-1.png" alt="Card image cap">
+                                </a>
+                                <div class="card-body">
+                                    <a href="#" class="d-block mb-2">
+                                        <h4>Pitstop</h4>
+                                    </a>
+                                    <span>A running club for car enthusiasts.</span>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="icon-users">&nbsp;</i> 18 members</li>
+                                    <li class="list-group-item"><i class="icon-folder">&nbsp;</i> 12 projects</li>
+                                </ul>
+                                <div class="card-footer d-flex align-items-center">
+                                    <div>
+                                        <ul class="list-inline list-spacing-sm">
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-male-5.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-female-4.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-male-5.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-female-4.jpg">
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <span class="text-small ml-2">+ 14 more</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 d-flex">
+                            <div class="card">
+                                <a href="#">
+                                    <img class="card-img-top" src="/img/graphic-group-2.png" alt="Card image cap">
+                                </a>
+                                <div class="card-body">
+                                    <a href="#" class="d-block mb-2">
+                                        <h4>Bench</h4>
+                                    </a>
+                                    <span>An elite members-only running club.</span>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="icon-users">&nbsp;</i> 9 members</li>
+                                    <li class="list-group-item"><i class="icon-folder">&nbsp;</i> 6 projects</li>
+                                </ul>
+                                <div class="card-footer d-flex align-items-center">
+                                    <div>
+                                        <ul class="list-inline list-spacing-sm">
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-male-5.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-female-5.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-male-4.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-female-5.jpg">
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <span class="text-small ml-2">+ 5 more</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 d-flex">
+                            <div class="card">
+                                <a href="#">
+                                    <img class="card-img-top" src="/img/photo-group-3.jpg" alt="Card image cap">
+                                </a>
+                                <div class="card-body">
+                                    <a href="#" class="d-block mb-2">
+                                        <h4>SeattleMania</h4>
+                                    </a>
+                                    <span>The biggest running club in Seattle.</span>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="icon-users">&nbsp;</i> 42 members</li>
+                                    <li class="list-group-item"><i class="icon-folder">&nbsp;</i> 7 projects</li>
+                                </ul>
+                                <div class="card-footer d-flex align-items-center">
+                                    <div>
+                                        <ul class="list-inline list-spacing-sm">
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-male-4.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-female-2.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-male-4.jpg">
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <img alt="Group member" class="avatar avatar-xs" src="/img/avatar-female-5.jpg">
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <span class="text-small ml-2">+ 38 more</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </div>
+
+            <div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="followers-tab">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Ryan Nelson" src="/img/avatar-male-1.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Ryan Nelson</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Sacramento, USA</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">334 Followers</li>
+
+                                                <li class="list-inline-item text-small">121 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">ryan_nelson01</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Jenna McCormick" src="/img/avatar-female-1.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Jenna McCormick</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Sydney, AU</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">176 Followers</li>
+
+                                                <li class="list-inline-item text-small">131 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">jennymicks</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Nate Dawson" src="/img/avatar-male-2.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Nate Dawson</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Albany, USA</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">566 Followers</li>
+
+                                                <li class="list-inline-item text-small">82 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">nate_the_runner</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Stacy Hampton" src="/img/avatar-female-2.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Stacy Hampton</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Sheffield, UK</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">65 Followers</li>
+
+                                                <li class="list-inline-item text-small">32 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">lfreebody</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Liam Derby" src="/img/avatar-male-3.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Liam Derby</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Nairobi, KE</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">22 Followers</li>
+
+                                                <li class="list-inline-item text-small">5 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">trailblazing_liam</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Lucy Friedmann" src="/img/avatar-female-3.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Lucy Friedmann</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Dublin, IR</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">111 Followers</li>
+
+                                                <li class="list-inline-item text-small">167 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">lucy_capricorn99</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Juan Fernandez" src="/img/avatar-male-4.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Juan Fernandez</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Buenos Aires, AR</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">54 Followers</li>
+
+                                                <li class="list-inline-item text-small">22 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">fernandezblogs</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Regina Kahnwald" src="/img/avatar-female-4.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Regina Kahnwald</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Berlin, DE</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">343 Followers</li>
+
+                                                <li class="list-inline-item text-small">152 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">reginaontherun</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Arvind Singh" src="/img/avatar-male-5.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Arvind Singh</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Kathmandu, NP</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">75 Followers</li>
+
+                                                <li class="list-inline-item text-small">34 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">thatnepalrunner</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Mia Kensington" src="/img/avatar-female-5.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Mia Kensington</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Wellington, NZ</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">291 Followers</li>
+
+                                                <li class="list-inline-item text-small">183 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">veteran_nz_runner</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Roberto Diaz" src="/img/avatar-male-6.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Roberto Diaz</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Madrid, ES</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">543 Followers</li>
+
+                                                <li class="list-inline-item text-small">487 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">diazelcorredor</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media">
+                                        <a href="#" class="mr-3">
+                                            <img alt="Katerina Nabokova" src="/img/avatar-female-6.jpg" class="avatar">
+                                        </a>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#" class="h5 m-0">
+                                                    <h5>Katerina Nabokova</h5>
+                                                </a>
+                                                <small class="text-muted"><i class="icon-location"></i> Moscow, RU</small>
+                                            </div>
+                                            <ul class="list-inline">
+
+                                                <li class="list-inline-item text-small">461 Followers</li>
+
+                                                <li class="list-inline-item text-small">289 Following</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <a class="text-small" href="#">katelovestorun</a>
+                                    <button class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Follow">
+                                        <i class="icon-add-user"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        </div>
+
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </div>
+
+        </div>
+    </section>
+    <!--end of section-->
+</div>
